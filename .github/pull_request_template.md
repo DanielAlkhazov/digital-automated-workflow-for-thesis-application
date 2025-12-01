@@ -1,10 +1,4 @@
 
----
-
-## 2️⃣ Pull-Request-Template (für `.github/pull_request_template.md`)
-
-Lege im Repo den Ordner `.github` an und darin die Datei `pull_request_template.md`:
-
 ```markdown
 ## 📝 Beschreibung
 
