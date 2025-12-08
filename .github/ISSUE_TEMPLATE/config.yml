@@ -2,7 +2,7 @@ blank_issues_enabled: false
 
 contact_links:
   - name: Fragen oder Diskussionen
-    url: https://github.com/<ORG>/<REPO>/discussions
+    url: https://github.com/DanielAlkhazov/digital-automated-workflow-for-thesis-application/discussions
     about: Bitte stelle allgemeine Fragen im Discussions-Bereich.
 
 issue_templates:
