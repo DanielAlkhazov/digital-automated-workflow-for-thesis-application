@@ -4,16 +4,3 @@ contact_links:
   - name: Fragen oder Diskussionen
     url: https://github.com/DanielAlkhazov/digital-automated-workflow-for-thesis-application/discussions
     about: Bitte stelle allgemeine Fragen im Discussions-Bereich.
-
-issue_templates:
-  - name: User Story
-    about: Beschreibung einer neuen User Story
-    file: user-story.yml
-
-  - name: Task
-    about: Technischer Task oder Sub-Issue
-    file: task.yml
-
-  - name: Bug Report
-    about: Melde einen Fehler in der Anwendung
-    file: bug.yml
