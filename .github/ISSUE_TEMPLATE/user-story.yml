@@ -1,0 +1,49 @@
+name: User Story
+description: Eine neue User Story für das Projekt
+title: "US: <Kurzbeschreibung>"
+labels: ["user story"]
+body:
+  - type: input
+    id: role
+    attributes:
+      label: Als…
+      description: Wer profitiert von dieser User Story?
+      placeholder: z. B. "Als Studierende/r"
+    validations:
+      required: true
+
+  - type: input
+    id: goal
+    attributes:
+      label: möchte ich…
+      description: Was ist das Ziel?
+      placeholder: z. B. "einen Antrag digital einreichen"
+    validations:
+      required: true
+
+  - type: input
+    id: benefit
+    attributes:
+      label: um…
+      description: Welchen Nutzen liefert die Story?
+      placeholder: z. B. "um den Prozess zu vereinfachen."
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Akzeptanzkriterien
+      description: Nach BDD-Format (Given – When – Then)
+      placeholder: |
+        Given …
+        When …
+        Then …
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Umsetzung in Tasks
+      placeholder: "- Task 1\n- Task 2"
