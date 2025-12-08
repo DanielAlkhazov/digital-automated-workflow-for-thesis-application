@@ -1,0 +1,61 @@
+name: Bug Report
+description: Melde einen Fehler in der Anwendung
+title: "Bug: <Kurzbeschreibung>"
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Beschreibung
+      description: Was ist das Problem?
+      placeholder: Beschreibe das Verhalten, das nicht korrekt ist.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Schritte zur Reproduktion
+      description: Wie kann man den Fehler nachvollziehen?
+      placeholder: |
+        1. …
+        2. …
+        3. …
+        Erwartetes Ergebnis: …
+        Tatsächliches Ergebnis: …
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Erwartetes Verhalten
+      placeholder: Was sollte passieren?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Tatsächliches Verhalten
+      placeholder: Was ist tatsächlich passiert?
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Umgebung
+      description: Wo trat der Fehler auf?
+      placeholder: z. B. Browser, OS, Version, Device
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevante Log-Ausgaben (optional)
+      description: Füge relevante Fehlermeldungen oder Stacktraces ein.
+      render: text
+    validations:
+      required: false
