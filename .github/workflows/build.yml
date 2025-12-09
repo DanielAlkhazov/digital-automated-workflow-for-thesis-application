@@ -1,19 +1,75 @@
-name: Build
+name: CI
+ 
 on:
+
   push:
-    branches:
-      - main
+
+    branches: [ "main" ]
+
   pull_request:
-    types: [opened, synchronize, reopened]
+
+    branches: [ "main" ]
+ 
 jobs:
-  sonarqube:
-    name: SonarQube
+
+  build-and-analyze:
+
     runs-on: ubuntu-latest
+ 
     steps:
-      - uses: actions/checkout@v4
+
+      - name: Checkout
+
+        uses: actions/checkout@v4
+
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v6
+
+          fetch-depth: 0
+ 
+      - name: Set up JDK 21
+
+        uses: actions/setup-java@v4
+
+        with:
+
+          distribution: 'temurin'
+
+          java-version: '21'
+ 
+      - name: Build & Test Backend (Maven)
+
+        working-directory: backend
+
+        run: mvn -B clean verify
+ 
+      - name: Set up Node
+
+        uses: actions/setup-node@v4
+
+        with:
+
+          node-version: '22'
+ 
+      - name: Frontend Build & Tests
+
+        working-directory: frontend
+
+        run: |
+
+          npm install
+
+          npm test --if-present
+ 
+      - name: SonarCloud Scan
+
+        uses: SonarSource/sonarcloud-github-action@v2
+
         env:
+
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+        with:
+
+          projectBaseDir: .
+
+ 
